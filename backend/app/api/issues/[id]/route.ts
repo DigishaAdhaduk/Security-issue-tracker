@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const user = new Guard().run(req);
+    const user = await new Guard().check(req);
     const issue = await new IssueService().one(params.id, user.id);
 
     if (!issue) {
@@ -24,7 +24,7 @@ export async function PUT(
   { params }: { params: { id: string } }
 ) {
   try {
-    const user = new Guard().run(req);
+    const user = await new Guard().check(req);
     const body = await req.json();
 
     await new IssueService().update(params.id, body, user.id);
@@ -40,7 +40,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const user = new Guard().run(req);
+    const user = await new Guard().check(req);
 
     await new IssueService().remove(params.id, user.id);
 

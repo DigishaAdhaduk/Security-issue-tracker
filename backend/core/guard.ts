@@ -8,6 +8,6 @@ export class Guard {
   check(req: Request) {
     const h = req.headers.get("authorization")
     if (!h) throw new Err("login first", 401)
-    return Auth.read(h.split(" ")[1])
+    return Auth.verify(h.split(" ")[1])
   }
 }

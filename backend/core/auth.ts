@@ -24,4 +24,8 @@ export class Auth {
   static async check(pass: string, hash: string) {
     return bcrypt.compare(pass, hash);
   }
+
+  static verify(token: string) {
+    return jwt.verify(token, process.env.JWT_SECRET!);
+  }
 }
