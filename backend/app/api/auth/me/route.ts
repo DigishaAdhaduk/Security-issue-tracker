@@ -1,5 +1,5 @@
-import { Guard } from "@/backend/core/guard"
-import { Repo } from "@/backend/core/repo"
+import { Guard } from "../../../../core/guard"
+import { Repo } from "../../../../core/repo"
 
 export async function GET(req: Request) {
   const g: any = new Guard().check(req)
