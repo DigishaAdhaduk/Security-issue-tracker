@@ -36,10 +36,9 @@ export default function RegisterPage() {
   return (
     <section className="auth-page">
       <div className="auth-card">
-        <h1 className="auth-title">Create Account</h1>
+        <h1>Create Account</h1>
 
         <input
-          className="auth-input"
           type="email"
           placeholder="Email"
           value={email}
@@ -47,22 +46,15 @@ export default function RegisterPage() {
         />
 
         <input
-          className="auth-input"
           type="password"
           placeholder="Password"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         />
 
-        {err && <p className="auth-error">{err}</p>}
+        {err && <p className="error">{err}</p>}
 
-        <button className="auth-btn" onClick={register}>
-          Register
-        </button>
-
-        <p className="auth-footer">
-          Already registered? Just enter your details to continue
-        </p>
+        <button onClick={register}>Register</button>
       </div>
     </section>
   );
