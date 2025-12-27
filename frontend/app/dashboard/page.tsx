@@ -7,24 +7,18 @@ type Issue = {
   id: number;
   type: string;
   title: string;
-  status: "Open" | "In Progress" | "Closed";
+  status: string;
 };
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
 
-  // 🔐 Protect route
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
       router.replace("/register");
-      return;
     }
-    setMounted(true);
-  }, [router]);
-
-  if (!mounted) return null;
+  }, []);
 
   const [issues, setIssues] = useState<Issue[]>([
     {
@@ -57,8 +51,8 @@ export default function DashboardPage() {
   function addIssue() {
     if (!title.trim()) return;
 
-    setIssues((prev) => [
-      ...prev,
+    setIssues([
+      ...issues,
       {
         id: Date.now(),
         type,
@@ -71,8 +65,8 @@ export default function DashboardPage() {
   }
 
   function updateStatus(id: number) {
-    setIssues((prev) =>
-      prev.map((i) =>
+    setIssues(
+      issues.map((i) =>
         i.id === id
           ? {
               ...i,
@@ -89,7 +83,7 @@ export default function DashboardPage() {
   }
 
   function removeIssue(id: number) {
-    setIssues((prev) => prev.filter((i) => i.id !== id));
+    setIssues(issues.filter((i) => i.id !== id));
   }
 
   const filtered = issues.filter((i) => {
@@ -152,10 +146,6 @@ export default function DashboardPage() {
 
       {/* ISSUE LIST */}
       <div className="issue-list">
-        {filtered.length === 0 && (
-          <p style={{ opacity: 0.6 }}>No issues found</p>
-        )}
-
         {filtered.map((i) => (
           <div key={i.id} className="issue-card">
             <div>
@@ -163,7 +153,7 @@ export default function DashboardPage() {
               <span className="issue-type">{i.type}</span>
             </div>
 
-            <div className="issue-actions">
+            <div style={{ display: "flex", gap: "10px" }}>
               <button
                 className={`status ${i.status.replace(" ", "-")}`}
                 onClick={() => updateStatus(i.id)}

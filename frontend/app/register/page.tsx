@@ -9,28 +9,14 @@ export default function RegisterPage() {
   const [err, setErr] = useState("");
   const router = useRouter();
 
-  async function register() {
-    setErr("");
-
-    try {
-      const res = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, pass }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setErr(data.error || "Registration failed");
-        return;
-      }
-
-      localStorage.setItem("token", data.token);
-      router.push("/dashboard");
-    } catch {
-      setErr("Server not reachable");
+  function register() {
+    if (!email || !pass) {
+      setErr("All fields are required");
+      return;
     }
+
+    localStorage.setItem("token", "demo-token");
+    router.push("/dashboard");
   }
 
   return (
@@ -52,9 +38,13 @@ export default function RegisterPage() {
           onChange={(e) => setPass(e.target.value)}
         />
 
-        {err && <p className="error">{err}</p>}
+        {err && <p className="auth-error">{err}</p>}
 
         <button onClick={register}>Register</button>
+
+        <p className="auth-footer">
+          Already registered? Just continue.
+        </p>
       </div>
     </section>
   );
