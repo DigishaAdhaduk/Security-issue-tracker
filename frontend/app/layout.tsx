@@ -1,5 +1,9 @@
 import "./globals.css";
-import Nav from "@/components/Nav";
+import Navbar from "../components/Nav";
+
+export const metadata = {
+  title: "ApniSec",
+};
 
 export default function RootLayout({
   children,
@@ -9,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Nav />
+        <Navbar />
         {children}
       </body>
     </html>

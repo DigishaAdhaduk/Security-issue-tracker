@@ -15,7 +15,8 @@ export default function RegisterPage() {
       return;
     }
 
-    localStorage.setItem("token", "demo-token");
+    // Fake success (frontend-only)
+    localStorage.setItem("token", "dummy-token");
     router.push("/dashboard");
   }
 
@@ -25,7 +26,6 @@ export default function RegisterPage() {
         <h1>Create Account</h1>
 
         <input
-          type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -38,11 +38,11 @@ export default function RegisterPage() {
           onChange={(e) => setPass(e.target.value)}
         />
 
-        {err && <p className="auth-error">{err}</p>}
+        {err && <p className="error">{err}</p>}
 
         <button onClick={register}>Register</button>
 
-        <p className="auth-footer">
+        <p className="note">
           Already registered? Just continue.
         </p>
       </div>

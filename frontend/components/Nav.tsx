@@ -2,28 +2,16 @@
 
 import Link from "next/link";
 
-export default function Nav() {
+export default function Navbar() {
   return (
-    <header className="navbar">
-      <div className="nav-left">
-        <span className="logo">APNISEC</span>
+    <nav className="nav">
+      <div className="logo">APNISEC</div>
+
+      <div className="nav-links">
+        <Link href="/">Home</Link>
+        <Link href="/#services">Services</Link>
+        <Link href="/dashboard">Dashboard</Link>
       </div>
-
-      <nav className="nav-center">
-        <Link href="/" className="nav-link">Home</Link>
-
-        {/* Services scrolls on home */}
-        <a href="/#services" className="nav-link">
-          Services
-        </a>
-
-        {/* Dashboard route */}
-        <Link href="/dashboard" className="nav-link">
-          Dashboard
-        </Link>
-      </nav>
-
-
-    </header>
+    </nav>
   );
 }
