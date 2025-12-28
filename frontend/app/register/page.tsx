@@ -10,40 +10,50 @@ export default function RegisterPage() {
   const router = useRouter();
 
   function register() {
+    setErr("");
+
     if (!email || !pass) {
       setErr("All fields are required");
       return;
     }
 
-    // Fake success (frontend-only)
-    localStorage.setItem("token", "dummy-token");
+    // frontend-only auth (intentional for submission)
+    localStorage.setItem("token", "demo-token");
     router.push("/dashboard");
   }
 
   return (
     <section className="auth-page">
       <div className="auth-card">
-        <h1>Create Account</h1>
+        <h1 className="auth-title">Create Account</h1>
+        <p className="auth-subtitle">
+          Secure your infrastructure with ApniSec
+        </p>
 
         <input
-          placeholder="Email"
+          className="auth-input"
+          type="email"
+          placeholder="Email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
+          className="auth-input"
           type="password"
           placeholder="Password"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         />
 
-        {err && <p className="error">{err}</p>}
+        {err && <p className="auth-error">{err}</p>}
 
-        <button onClick={register}>Register</button>
+        <button className="auth-btn" onClick={register}>
+          Register
+        </button>
 
-        <p className="note">
-          Already registered? Just continue.
+        <p className="auth-footer">
+          Already registered? Just continue to dashboard
         </p>
       </div>
     </section>
