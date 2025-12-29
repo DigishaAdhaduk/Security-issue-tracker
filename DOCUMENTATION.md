@@ -46,8 +46,8 @@ Backend code included for evaluation.
 ## Outcome
 Delivered a production-style architecture with clean UI, scalable backend, and clear separation of concerns.
 
-<img src="./Images/1.png" alt="Home page" width="400"/>
-<img src="./Images/2.png" alt="Services" width="400"/>
-<img src="./Images/3.png" alt="Register page" width="400"/>
-<img src="./Images/4.png" alt="Dashboard" width="400"/>
-<img src="./Images/5.png" alt="Permormance" width="400"/>
+<img src="./Images/1.png" alt="Home page" width="900"/>
+<img src="./Images/2.png" alt="Services" width="900"/>
+<img src="./Images/3.png" alt="Register page" width="800"/>
+<img src="./Images/4.png" alt="Dashboard" width="700"/>
+<img src="./Images/5.png" alt="Permormance" width="1000"/>
