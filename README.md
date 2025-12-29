@@ -6,8 +6,7 @@ This application allows users to register and manage cybersecurity issues such a
 
 ---
 
-## 🚀 Demo: https://apnisec-securityissuetracker-48sgfkmmb-digishas-projects.vercel.app
-
+## 🚀 Demo: https://apnisec-securityissuetracker.vercel.app/
 ---
 
 ## 🚀 Tech Stack
