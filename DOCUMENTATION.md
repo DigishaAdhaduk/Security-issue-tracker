@@ -46,7 +46,7 @@ Backend code included for evaluation.
 ## Outcome
 Delivered a production-style architecture with clean UI, scalable backend, and clear separation of concerns.
 
-🚀 Demo: https://apnisec-securityissuetracker-48sgfkmmb-digishas-projects.vercel.app
+🚀 Demo: https://apnisec-securityissuetracker.vercel.app/
 
 
 <img src="./Images/1.png" alt="Home page" width="900"/>
