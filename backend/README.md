@@ -6,21 +6,6 @@ The backend is built using Next.js API Routes and strictly follows a class-based
 
 ---
 
-## 🧠 Architecture
-
-backend/
-├── app/api/
-├── core/
-│   ├── auth.ts
-│   ├── repo.ts
-│   ├── guard.ts
-│   └── err.ts
-├── prisma/
-│   └── schema.prisma
-└── README.md
-
----
-
 ## 🔐 Authentication
 
 - Custom JWT-based authentication
