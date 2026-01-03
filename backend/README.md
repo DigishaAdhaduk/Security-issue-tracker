@@ -15,33 +15,6 @@ The backend is built using Next.js API Routes and strictly follows a class-based
 
 ---
 
-# 🧠 Backend Architecture
-
-backend/
-├── 📂 app/
-│   └── 📂 api/
-│       ├── 🔐 auth/
-│       │   └── route.ts        🠖 Auth APIs (login, register)
-│       ├── 👤 users/
-│       │   └── route.ts        🠖 User-related APIs
-│       └── ❤️ health/
-│           └── route.ts        🠖 Health check endpoint
-│
-├── 📂 core/
-│   ├── 🔑 auth.ts              🠖 JWT, password, auth helpers
-│   ├── 🗄️ repo.ts              🠖 Database abstraction layer
-│   ├── 🛡️ guard.ts             🠖 Route protection & middleware
-│   └── ⚠️ err.ts               🠖 Centralized error handling
-│
-├── 📂 prisma/
-│   └── 🧬 schema.prisma        🠖 Database schema & models
-│
-├── 📦 package.json             🠖 Dependencies & scripts
-├── ⚙️ tsconfig.json            🠖 TypeScript configuration
-└── 📘 README.md                🠖 Project documentation
-
----
-
 ## 🗄 Database
 
 - PostgreSQL (Supabase)
